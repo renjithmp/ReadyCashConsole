@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Linq;
+using Bank.Model;
 using ReadyCashConsole.Model;
 
 namespace ReadyCashConsole
 {
-	public class CustomerCRUD
+	public class CustomerActions
 	{
 
-        BankDbContext bankDbContext;
-        public CustomerCRUD(BankDbContext bankDbContext)
+        readonly BankDbContext bankDbContext;
+        public CustomerActions(BankDbContext bankDbContext)
 		{
 
             this.bankDbContext = bankDbContext;

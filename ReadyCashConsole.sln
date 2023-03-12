@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1705.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyCashConsole", "ReadyCashConsole\ReadyCashConsole.csproj", "{E06682E8-E16B-4155-91B2-0F414F45649E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyCashUnitTest", "ReadyCashUnitTest\ReadyCashUnitTest.csproj", "{613D2FB7-787B-426A-BD50-A4C7A7A980C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E06682E8-E16B-4155-91B2-0F414F45649E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E06682E8-E16B-4155-91B2-0F414F45649E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E06682E8-E16B-4155-91B2-0F414F45649E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613D2FB7-787B-426A-BD50-A4C7A7A980C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613D2FB7-787B-426A-BD50-A4C7A7A980C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613D2FB7-787B-426A-BD50-A4C7A7A980C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613D2FB7-787B-426A-BD50-A4C7A7A980C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

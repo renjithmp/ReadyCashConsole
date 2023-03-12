@@ -2,18 +2,22 @@
 using Bank.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 
 namespace ReadyCashConsole.Model
 {
 	public class BankDbContext:DbContext
 	{
         public DbSet<Customer> Customers { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        
+
+        public BankDbContext(DbContextOptions dbContextOptions):base(dbContextOptions)
         {
-            optionsBuilder.UseNpgsql( ConfigurationManager.ConnectionStrings["localPgsql"].ConnectionString);
-            base.OnConfiguring(optionsBuilder);
+          
         }
        
 	}
+
 }
 

@@ -12,7 +12,7 @@ namespace ReadyCashConsole
         public CustomerActions(BankDbContext bankDbContext)
 		{
 
-            this.bankDbContext = bankDbContext;
+           this.bankDbContext = bankDbContext;
 
 
 		}
@@ -29,6 +29,13 @@ namespace ReadyCashConsole
             this.bankDbContext.SaveChanges();
 
         }
+        public void RemoveByName(string name)
+        {
+            var customers = this.bankDbContext.Customers.Where(customer=> customer.Name.Equals(name)).ToList<Customer>();
+            this.bankDbContext.Remove(customers);
+            this.bankDbContext.SaveChanges();
+
+        }
         public void Update(Customer customer)
         {
             this.bankDbContext.Update<Customer>(customer);
@@ -40,6 +47,10 @@ namespace ReadyCashConsole
             return this.bankDbContext.Customers.ToList<Customer>();
         }
 
+        public List<Customer> FindByName(string name)
+        {
+            return this.bankDbContext.Customers.Where(cust => cust.Name.Equals(name)).ToList<Customer>();
+        }
     }
 }
 

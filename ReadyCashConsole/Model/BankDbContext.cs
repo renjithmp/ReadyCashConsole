@@ -10,7 +10,8 @@ namespace ReadyCashConsole.Model
 	public class BankDbContext:DbContext
 	{
         public DbSet<Customer> Customers { get; set; }
-        
+        public DbSet<Loan> Loans { get; set; }
+
 
         public BankDbContext(DbContextOptions dbContextOptions):base(dbContextOptions)
         {

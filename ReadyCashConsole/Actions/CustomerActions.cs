@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
 using Bank.Model;
-using ReadyCashConsole.Model;
+using ReadyCashConsole.Model; 
 
-namespace ReadyCashConsole
+namespace ReadyCashConsole.Actions
+
 {
 	public class CustomerActions
 	{

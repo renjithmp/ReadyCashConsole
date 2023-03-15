@@ -36,7 +36,7 @@ public class CustomerCrudUnitTests:BaseTest
     public void TestRemoveCustomer()
     {
         Customer customer = new Customer("name1", "email1.gmail.com", "112323232", "address1");
-
+        customerActions.Add(customer);
         customerActions.Remove(customer);
         List<Customer> customers = customerActions.FindByName("name1");
 

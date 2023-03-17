@@ -26,10 +26,10 @@ namespace ReadyCashConsole.Actions
             this.bankDbContext.SaveChanges();
 
         }
-        public void RemoveByLoanId(int loanId)
+        public void RemoveByLoanId(int id)
         {
-            var loans = this.bankDbContext.Loans.Where(loan => loan.LoanId.Equals(loanId)).ToList<Loan>();
-            this.bankDbContext.Remove(loans);
+            var loans = this.bankDbContext.Loans.Where(loan => loan.Id.Equals(id)).ToList<Loan>();
+            this.bankDbContext.Remove(loans.First());
             this.bankDbContext.SaveChanges();
 
         }

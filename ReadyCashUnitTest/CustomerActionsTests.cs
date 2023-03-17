@@ -35,10 +35,11 @@ public class CustomerCrudUnitTests:BaseTest
     [TestMethod]
     public void TestRemoveCustomer()
     {
-        Customer customer = new Customer("name1", "email1.gmail.com", "112323232", "address1");
+        string randomName = Guid.NewGuid().ToString();
+        Customer customer = new Customer(randomName, "email1.gmail.com", "112323232", "address1");
         customerActions.Add(customer);
         customerActions.Remove(customer);
-        List<Customer> customers = customerActions.FindByName("name1");
+        List<Customer> customers = customerActions.FindByName(randomName);
 
         Assert.IsTrue(customers.Count == 0);
     }

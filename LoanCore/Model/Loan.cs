@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ReadyCashConsole.Model
+namespace LoanCore.Model
 {
     public class Loan
     {

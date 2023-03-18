@@ -1,8 +1,8 @@
 ﻿using System;
-using Bank.Model;
-using ReadyCashConsole.Actions;
-using ReadyCashConsole.Model;
-
+using LoanCore.Model;
+using LoanCore.Actions;
+using CustomerCore.Actions;
+using CustomerCore.Model;
 namespace ReadyCashUnitTest
 {
     [TestClass]
@@ -13,8 +13,8 @@ namespace ReadyCashUnitTest
         Customer customer;
 		public LoanActionTests():base()
 		{
-			loanActions = new LoanActions(bankDbContext);
-			customerActions = new CustomerActions(bankDbContext);
+			loanActions = new LoanActions(loanDbContext);
+			customerActions = new CustomerActions(customerDbContext);
             customerActions.Add(new Customer("renjith", "renjithmac@gmail.com", "90898", "renjithAdd"));
             customer = customerActions.FindByName("renjith").First();
         }

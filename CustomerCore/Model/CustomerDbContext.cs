@@ -1,19 +1,18 @@
 ﻿using System;
-using Bank.Model;
+using CustomerCore.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 
-namespace ReadyCashConsole.Model
+namespace CustomerCore.Model
 {
-	public class BankDbContext:DbContext
+	public class CustomerDbContext:DbContext
 	{
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Loan> Loans { get; set; }
+       
 
-
-        public BankDbContext(DbContextOptions dbContextOptions):base(dbContextOptions)
+        public CustomerDbContext(DbContextOptions dbContextOptions):base(dbContextOptions)
         {
           
         }

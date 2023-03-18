@@ -1,11 +1,12 @@
-﻿using Bank.Model;
+﻿using LoanCore.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
-using ReadyCashConsole;
-using ReadyCashConsole.Actions;
-using ReadyCashConsole.Model;
+using LoanCore;
+using LoanCore.Actions;
+using CustomerCore.Model;
+using CustomerCore.Actions;
 
 namespace ReadyCashUnitTest;
 
@@ -18,7 +19,7 @@ public class CustomerCrudUnitTests:BaseTest
     public CustomerCrudUnitTests():base()
     {
 
-        customerActions = new CustomerActions(bankDbContext);
+        customerActions = new CustomerActions(customerDbContext);
 
     }
 

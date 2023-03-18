@@ -1,13 +1,12 @@
 ﻿using System;
-using Bank.Model;
-using ReadyCashConsole.Model;
+using LoanCore.Model;
 
-namespace ReadyCashConsole.Actions
+namespace LoanCore.Actions
 {
     public class LoanActions
     {
-        readonly BankDbContext bankDbContext;
-        public LoanActions(BankDbContext bankDbContext)
+        readonly LoanDbContext bankDbContext;
+        public LoanActions(LoanDbContext bankDbContext)
         {
 
             this.bankDbContext = bankDbContext;

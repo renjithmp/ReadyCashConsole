@@ -1,20 +1,23 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using ReadyCashConsole.Actions;
-using ReadyCashConsole.Model;
-
+using LoanCore.Actions;
+using LoanCore.Model;
+using CustomerCore;
+using CustomerCore.Model;
 namespace ReadyCashUnitTest
 {
 	public class BaseTest
 	{
-       protected BankDbContext bankDbContext;
+       protected CustomerDbContext customerDbContext;
+        protected LoanDbContext loanDbContext;
         public BaseTest()
 		{
             DbContextOptionsBuilder dbContextOptions = new DbContextOptionsBuilder();
             dbContextOptions.UseInMemoryDatabase(databaseName: "inMemoryReadyCashDb");
-            bankDbContext = new BankDbContext(dbContextOptions.Options);
-           
+            loanDbContext = new LoanDbContext(dbContextOptions.Options);
+            customerDbContext = new CustomerDbContext(dbContextOptions.Options);
+
         }
-	}
+    }
 }
 

@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿//using System;
+//using Microsoft.EntityFrameworkCore;
 
-namespace ReadyCashConsole
-{
-	public interface IDbContext
-	{
-		DbContext GetDbContext();
-	}
-}
+//namespace LoanCore
+//{
+//	public interface IDbContext
+//	{
+//		DbContext GetDbContext();
+//	}
+//}
 

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Bank.Model
+namespace CustomerCore.Model
 {
 
     public class Customer

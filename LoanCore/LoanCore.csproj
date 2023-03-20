@@ -9,10 +9,12 @@
   <ItemGroup>
     <None Remove="Actions\" />
     <None Remove="Model\" />
+    <None Remove="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Actions\" />
     <Folder Include="Model\" />
+    <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />

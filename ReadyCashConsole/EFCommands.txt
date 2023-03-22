@@ -1,1 +1,4 @@
-﻿dotnet ef migrations add firstMigration --project ../CustomerCore/CustomerCore.csproj -s readycashconsole.csproj    --verbose
+﻿dotnet ef migrations add firstMigration --project ../CustomerCore/CustomerCore.csproj -s readycashconsole.csproj    --verbose --context CustomerDbContext
+dotnet ef database update --verbose --context CustomerDbContext
+dotnet ef migrations add firstMigration --project ../LoanCore/LoanCore.csproj -s readycashconsole.csproj    --verbose --context LoanDbContext
+dotnet ef database update --verbose --context LoanDbContext

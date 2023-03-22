@@ -12,7 +12,7 @@ namespace LoanCore.Model
         public DbSet<Loan> Loans { get; set; }
 
 
-        public LoanDbContext(DbContextOptions dbContextOptions):base(dbContextOptions)
+        public LoanDbContext(DbContextOptions<LoanDbContext> dbContextOptions):base(dbContextOptions)
         {
           
         }

@@ -1,0 +1,1 @@
+﻿dotnet ef migrations add firstMigration --project ../CustomerCore/CustomerCore.csproj -s readycashconsole.csproj    --verbose

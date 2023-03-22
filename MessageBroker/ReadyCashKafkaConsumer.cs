@@ -7,12 +7,10 @@ namespace MessageBroker
 {
 	public class ReadyCashKafkaConsumer:Microsoft.Extensions.Hosting.BackgroundService
 	{
-       // IOptions<AppSettings> _appSettings;
-        ConsumerConfig _consumerConfig;
-        //public ReadyCashKafkaConsumer(ConsumerConfig consumerConfig, IOptions<AppSettings> appsettings)
+       
+        ConsumerConfig _consumerConfig;       
         public ReadyCashKafkaConsumer(ConsumerConfig consumerConfig)
-        {
-            //_appSettings = appsettings;
+        {       
             _consumerConfig = consumerConfig;
 		}
         private async Task  StartConsumer(CancellationToken stoppingToken)
@@ -23,11 +21,11 @@ namespace MessageBroker
                 {
                     using (var consumer = new ConsumerBuilder<Ignore, string>(_consumerConfig).Build())
                     {
-                        consumer.Subscribe("ready-cash");
+                        consumer.Subscribe(Topic.READYCASH);
                         var consumeResult = consumer.Consume().Message.Value;
                         if (!string.IsNullOrEmpty(consumeResult))
                         {
-
+                            Console.WriteLine(consumeResult);
                         }
 
 

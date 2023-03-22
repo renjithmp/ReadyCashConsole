@@ -3,7 +3,7 @@ namespace MessageBroker
 {
 	public static class Topic
 	{
-		public const string READYCASH = "ready-cash";
+		public const string READYCASH = "ready-cash-loan";
 		
 	}
 }

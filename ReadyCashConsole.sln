@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanService", "LoanService\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBroker", "MessageBroker\MessageBroker.csproj", "{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "BaseService\Base.csproj", "{D498C1A2-560C-4831-AE72-990828FAD0AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D498C1A2-560C-4831-AE72-990828FAD0AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D498C1A2-560C-4831-AE72-990828FAD0AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D498C1A2-560C-4831-AE72-990828FAD0AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D498C1A2-560C-4831-AE72-990828FAD0AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

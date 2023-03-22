@@ -14,10 +14,13 @@ namespace LoanCore.Model
 
         public LoanDbContext(DbContextOptions<LoanDbContext> dbContextOptions):base(dbContextOptions)
         {
-          
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+
+
         }
-       
-	}
+
+    }
 
 }
 

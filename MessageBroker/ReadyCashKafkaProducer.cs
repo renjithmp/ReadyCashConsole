@@ -18,16 +18,16 @@ public class ReadyCashKafkaProducer
         var producerConfig = new ProducerConfig() { BootstrapServers = "localhost:9092" };
         _producerConfig = producerConfig;
     }
-    public async void SendMessage()
+    public async void SendMessage(int userId,int loanId)
     {
-
+        string messageString = userId.ToString() + ";" + loanId.ToString();
         try
         {
 
             using (var producer = new ProducerBuilder<Null, string>(_producerConfig).Build())
             {
                 var message = new Message<Null, string>();
-                message.Value = Guid.NewGuid().ToString();
+                message.Value = messageString;
                 var result = await producer.ProduceAsync(Topic.READYCASH, message);
             }
 

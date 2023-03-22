@@ -24,8 +24,7 @@ host.StartAsync();
 using IServiceScope serviceScope = host.Services.CreateScope();
 IServiceProvider provider = serviceScope.ServiceProvider;
 
-var readyCashKafkaProducer = provider.GetService<ReadyCashKafkaProducer>();
-readyCashKafkaProducer.SendMessage();
+
 Console.WriteLine("Hello, World!");
 var bankDbContext = provider.GetService<CustomerDbContext>();
 if (bankDbContext != null)

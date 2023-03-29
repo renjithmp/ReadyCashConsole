@@ -1,50 +1,52 @@
 ﻿using System;
+using Confluent.Kafka.SyncOverAsync;
+
+using Confluent.SchemaRegistry;
+using Confluent.SchemaRegistry.Serdes;
 using Confluent.Kafka;
 using Microsoft.Extensions.Options;
 using System.Configuration;
 using CustomerCore.Actions;
 using CustomerCore.Model;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MessageBroker
 {
 	public class ReadyCashKafkaConsumer:Microsoft.Extensions.Hosting.BackgroundService
 	{
+        
+        public ConsumerManager _consumerManager;
        
+
         ConsumerConfig _consumerConfig;
         CustomerTransactionsActions customerTransactionsActions;
-        public ReadyCashKafkaConsumer(ConsumerConfig consumerConfig)
+        public ReadyCashKafkaConsumer(ConsumerConfig consumerConfig,ConsumerManager consumerManager)
         {       
             _consumerConfig = consumerConfig;
-            var dbContextOptions = new DbContextOptionsBuilder<CustomerDbContext>();
-            dbContextOptions.UseNpgsql("Host=localhost; Database=customer; Username=webuser; Password=SocGen01*");
-            
-
-
-            customerTransactionsActions = new CustomerTransactionsActions(new CustomerCore.Model.CustomerDbContext(dbContextOptions.Options));
+            _consumerManager = consumerManager;
+          
 		}
         private async Task  StartConsumer(CancellationToken stoppingToken)
         {
+            
             while (!stoppingToken.IsCancellationRequested)
             {
                 try
                 {
-                    using (var consumer = new ConsumerBuilder<Ignore, string>(_consumerConfig).Build())
+                    using (var consumer = new ConsumerBuilder<Ignore,string>(_consumerConfig).Build() )
                     {
                         consumer.Subscribe(Topic.READYCASH);
 
                         var consumeResult = consumer.Consume().Message.Value;
                         Console.WriteLine("got some message");
-                        Console.WriteLine(consumeResult.ToString());
-                        if (!string.IsNullOrEmpty(consumeResult))
+                        Console.WriteLine(consumeResult?.ToString());
+                        if (consumeResult!=null)
                         {
                             try
                             {
-                                string userId = consumeResult.Substring(0, 1);
-                                string loanId = consumeResult.Substring(2,  1);
-                                var customerTransaction = new CustomerTransactions(Convert.ToInt32(userId), Convert.ToInt32(loanId), "loan", DateTime.Now);
-
-                                customerTransactionsActions.Add(customerTransaction);
+                                _consumerManager.ConsumeMessage(consumeResult); 
                             }
                             catch (Exception e) { Console.WriteLine(e.ToString()); }
                         }
@@ -66,6 +68,8 @@ namespace MessageBroker
             Task.Run(() => StartConsumer(stoppingToken));
             return Task.CompletedTask;
         }
+
+      
     }
 }
 

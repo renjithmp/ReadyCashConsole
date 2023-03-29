@@ -15,7 +15,7 @@ string loanDBConnectionstring = "Host=localhost; Database=loan; Username=webuser
 using IHost host = Host.CreateDefaultBuilder(args).ConfigureServices(services =>
 //services.AddDbContext<BankDbContext>(options => options.UseNpgsql(ConfigurationManager.ConnectionStrings["localPgsql"].ConnectionString))
 //).Build();
-services.AddSingleton<ReadyCashKafkaProducer>().
+services.AddSingleton<ReadyCashKafkaProducer<CustomerTransactions>>().
 AddDbContext<CustomerDbContext>(options => options.UseNpgsql(customerDBConnectionstring)).AddDbContext<LoanDbContext>(options=>
 options.UseNpgsql(loanDBConnectionstring))
 ).Build();

@@ -10,9 +10,20 @@
   <ItemGroup>
     <PackageReference Include="Confluent.Kafka" Version="2.0.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="Confluent.SchemaRegistry" Version="2.0.2" />
+    <PackageReference Include="Confluent.SchemaRegistry.Serdes" Version="1.3.0" />
+    <PackageReference Include="Confluent.SchemaRegistry.Serdes.Protobuf" Version="2.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomerService\CustomerService.csproj" />
     <ProjectReference Include="..\CustomerCore\CustomerCore.csproj" />
+    <ProjectReference Include="..\LoanCore\LoanCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Consumers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Consumers\" />
   </ItemGroup>
 </Project>

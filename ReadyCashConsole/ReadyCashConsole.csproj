@@ -21,5 +21,6 @@
     <ProjectReference Include="..\CustomerCore\CustomerCore.csproj" />
     <ProjectReference Include="..\LoanCore\LoanCore.csproj" />
     <ProjectReference Include="..\MessageBroker\MessageBroker.csproj" />
+    <ProjectReference Include="..\BaseService\MessageProducer.csproj" />
   </ItemGroup>
 </Project>

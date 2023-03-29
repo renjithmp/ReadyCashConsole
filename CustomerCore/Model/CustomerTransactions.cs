@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Google.Protobuf;
+using Google.Protobuf.Reflection;
 
 namespace CustomerCore.Model
 {
@@ -13,6 +15,7 @@ namespace CustomerCore.Model
         public string transactionType { get; set; }
         public DateTime transactionTimestamp { get; set; }
 
+        
 
         public CustomerTransactions(int customerId,int transactionId,string transactionType,DateTime transactionTimestamp)
 		{
@@ -22,6 +25,11 @@ namespace CustomerCore.Model
             this.transactionTimestamp = transactionTimestamp;
 
         }
-	}
+        public CustomerTransactions()
+        {
+        }
+
+       
+    }
 }
 

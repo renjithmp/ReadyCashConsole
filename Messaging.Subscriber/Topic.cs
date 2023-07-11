@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MessageBroker
+namespace MessagingSubscriber
 {
 	public static class Topic
 	{

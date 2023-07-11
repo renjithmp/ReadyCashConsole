@@ -1,14 +1,24 @@
-﻿using LoanCore.Actions;
+﻿using Base;
+using Confluent.Kafka;
+//using CustomerCore.Actions;
+//using CustomerCore.Model;
+using LoanCore.Actions;
 using LoanCore.Model;
 using LoanService.Domain;
 using Microsoft.EntityFrameworkCore;
+using KafkaMessage.Messages;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 string loanDBConnectionstring = "Host=localhost; Database=loan; Username=webuser; Password=SocGen01*";//ConfigurationManager.ConnectionStrings["localPgsqlCustomer"].ConnectionString;
+//string customerDBConnectionstring = "Host=localhost; Database=customer; Username=webuser; Password=SocGen01*";//ConfigurationManager.ConnectionStrings["localPgsqlCustomer"].ConnectionString;
 
 builder.Services.AddControllers();
+//builder.Services.AddDbContext<CustomerDbContext>(options => options.UseNpgsql(customerDBConnectionstring));
+//builder.Services.AddScoped<CustomerTransactionsTracker>();
+//builder.Services.AddScoped<CustomerTransactions>();
+builder.Services.AddScoped <MessageProducer<LoanTransactionMessage>>();
 builder.Services.AddScoped<LoanAccountService>();
 builder.Services.AddDbContext<LoanDbContext>(options => options.UseNpgsql(loanDBConnectionstring));
 builder.Services.AddScoped<LoanActions>();

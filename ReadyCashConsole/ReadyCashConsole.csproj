@@ -18,9 +18,8 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomerCore\CustomerCore.csproj" />
-    <ProjectReference Include="..\LoanCore\LoanCore.csproj" />
-    <ProjectReference Include="..\MessageBroker\MessageBroker.csproj" />
-    <ProjectReference Include="..\BaseService\MessageProducer.csproj" />
+    <ProjectReference Include="..\CustomerCore\Customer.Core.csproj" />
+    <ProjectReference Include="..\LoanCore\Loan.Core.csproj" />
+    <ProjectReference Include="..\BaseService\Messaging.Publisher.csproj" />
   </ItemGroup>
 </Project>

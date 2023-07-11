@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReadyCashConsole\ReadyCashConsole.csproj" />
+    <ProjectReference Include="..\KafkaMessage\Messaging.Model.csproj" />
+    <ProjectReference Include="..\BaseService\Messaging.Publisher.csproj" />
+    <ProjectReference Include="..\CustomerCore\Customer.Core.csproj" />
+    <ProjectReference Include="..\LoanCore\Loan.Core.csproj" />
   </ItemGroup>
 </Project>

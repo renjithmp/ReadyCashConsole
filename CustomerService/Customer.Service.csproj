@@ -19,7 +19,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomerCore\CustomerCore.csproj">
+    <None Remove="Events\" />
+    <None Remove="Events\Publisher\" />
+    <None Remove="Events\Subscriber\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+    <Folder Include="Events\Publisher\" />
+    <Folder Include="Events\Subscriber\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerCore\Customer.Core.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\KafkaMessage\Messaging.Model.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Messaging.Subscriber\Messaging.Subscriber.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

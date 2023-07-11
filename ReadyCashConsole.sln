@@ -7,17 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyCashConsole", "ReadyCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyCashUnitTest", "ReadyCashUnitTest\ReadyCashUnitTest.csproj", "{613D2FB7-787B-426A-BD50-A4C7A7A980C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerCore", "CustomerCore\CustomerCore.csproj", "{8833A578-3CCB-408E-BAFC-0EE58E98BCD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Core", "CustomerCore\Customer.Core.csproj", "{8833A578-3CCB-408E-BAFC-0EE58E98BCD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanCore", "LoanCore\LoanCore.csproj", "{7EE1BE4C-068A-4407-AAA0-EA5D316F5D3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loan.Core", "LoanCore\Loan.Core.csproj", "{7EE1BE4C-068A-4407-AAA0-EA5D316F5D3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerService", "CustomerService\CustomerService.csproj", "{7F010706-DB32-476F-8A8D-3EC22121150D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service", "CustomerService\Customer.Service.csproj", "{7F010706-DB32-476F-8A8D-3EC22121150D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanService", "LoanService\LoanService.csproj", "{E7A16EAC-775C-4595-92CE-935C2E619F2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loan.Service", "LoanService\Loan.Service.csproj", "{E7A16EAC-775C-4595-92CE-935C2E619F2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBroker", "MessageBroker\MessageBroker.csproj", "{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Publisher", "BaseService\Messaging.Publisher.csproj", "{D498C1A2-560C-4831-AE72-990828FAD0AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageProducer", "BaseService\MessageProducer.csproj", "{D498C1A2-560C-4831-AE72-990828FAD0AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Model", "KafkaMessage\Messaging.Model.csproj", "{E3A5A312-B020-4700-AAF9-4D609DDA52FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Subscriber", "Messaging.Subscriber\Messaging.Subscriber.csproj", "{81C1CCB5-E309-4DAE-9560-8BA278CCB3F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,14 +51,18 @@ Global
 		{E7A16EAC-775C-4595-92CE-935C2E619F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7A16EAC-775C-4595-92CE-935C2E619F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7A16EAC-775C-4595-92CE-935C2E619F2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0AADE6E-A03D-41F3-80F4-9E5699C89A2E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D498C1A2-560C-4831-AE72-990828FAD0AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D498C1A2-560C-4831-AE72-990828FAD0AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D498C1A2-560C-4831-AE72-990828FAD0AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D498C1A2-560C-4831-AE72-990828FAD0AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A5A312-B020-4700-AAF9-4D609DDA52FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A5A312-B020-4700-AAF9-4D609DDA52FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A5A312-B020-4700-AAF9-4D609DDA52FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A5A312-B020-4700-AAF9-4D609DDA52FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C1CCB5-E309-4DAE-9560-8BA278CCB3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C1CCB5-E309-4DAE-9560-8BA278CCB3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C1CCB5-E309-4DAE-9560-8BA278CCB3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C1CCB5-E309-4DAE-9560-8BA278CCB3F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

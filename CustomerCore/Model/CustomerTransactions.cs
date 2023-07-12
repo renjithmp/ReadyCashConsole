@@ -27,6 +27,7 @@ namespace CustomerCore.Model
         }
         public CustomerTransactions()
         {
+            transactionType = "Default";
         }
 
        

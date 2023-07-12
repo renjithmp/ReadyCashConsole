@@ -2,45 +2,38 @@
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
 
-
-public class ReadyCashKafkaProducer<T>
+namespace MessagingPublisher
 {
-    ProducerConfig _producerConfig;
-
-
-    AvroSerializerConfig avroSerializerConfig = new AvroSerializerConfig
+    public class ReadyCashKafkaProducer<T>
     {
-        // optional Avro serializer properties:
-        BufferBytes = 100
-    };
+        readonly ProducerConfig _producerConfig;
 
-
-    /// <summary>
-    /// Uses default producer config
-    /// </summary>
-    public ReadyCashKafkaProducer()
-    {
-        var producerConfig = new ProducerConfig() { BootstrapServers = "localhost:9092" };
-        _producerConfig = producerConfig;
-    }
-    public async void SendMessage(T notificationMessage)
-    {
-      //  string messageString = userId.ToString() + ";" + loanId.ToString();
-        try
+        /// <summary>
+        /// Uses default producer config
+        /// </summary>
+        public ReadyCashKafkaProducer()
         {
-            //using (var schemaRegistry = new CachedSchemaRegistryClient(avroSerializerConfig))
-            using (var producer = new ProducerBuilder<Null, string>(_producerConfig).Build())
+            var producerConfig = new ProducerConfig() { BootstrapServers = "localhost:9092" };
+            _producerConfig = producerConfig;
+        }
+        public async Task SendMessage(T notificationMessage)
+        {
+            try
             {
-                var message = new Message<Null, string>();
-                message.Value = Newtonsoft.Json.JsonConvert.SerializeObject(notificationMessage);
-                var result = await producer.ProduceAsync("ready-cash-loan", message);
+                using (var producer = new ProducerBuilder<Null, string>(_producerConfig).Build())
+                {
+                    var message = new Message<Null, string>();
+                    message.Value = Newtonsoft.Json.JsonConvert.SerializeObject(notificationMessage);
+                    var result = await producer.ProduceAsync("ready-cash-loan", message);
+                    
+                }
+
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
 
-        }
-        catch (Exception e) {
-            Console.WriteLine(e.ToString());
-        }
     }
-
-
 }

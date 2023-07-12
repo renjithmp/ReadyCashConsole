@@ -12,18 +12,6 @@ namespace CustomerCore.Actions
 
          CustomerDbContext customerDbContext;
 
-        private void SetDbContext()
-        {
-            //using (
-            var scope = _scopeFactory.CreateScope();
-            //)
-            //{
-                this.customerDbContext = scope.ServiceProvider.GetRequiredService<CustomerDbContext>();
-
-                //this.customerDbContext = customerDbContext;
-            //}
-            //return customerDbContext;
-        }
         public CustomerTransactionsTracker(IServiceScopeFactory scopeFactory)
 		{
 
@@ -35,14 +23,12 @@ namespace CustomerCore.Actions
 
 		public void Add(CustomerTransactions customerTransactions)
         {
-           // SetDbContext();
             this.customerDbContext.Add<CustomerTransactions>(customerTransactions);
             this.customerDbContext.SaveChanges();
 
         }
         public void Remove(CustomerTransactions customerTransactions)
         {
-           // SetDbContext();
             this.customerDbContext.Remove<CustomerTransactions>(customerTransactions);
             this.customerDbContext.SaveChanges();
 
@@ -50,14 +36,12 @@ namespace CustomerCore.Actions
   
         public void Update(CustomerTransactions customerTransactions)
         {
-          //  SetDbContext();
             this.customerDbContext.Update<CustomerTransactions>(customerTransactions);
             this.customerDbContext.SaveChanges();
 
         }
         public List<CustomerTransactions> Read()
         {
-           // SetDbContext();
             return this.customerDbContext.CustomerTransactions.ToList<CustomerTransactions>();
         }
 

@@ -1,4 +1,6 @@
-﻿namespace Base;
+﻿using MessagingPublisher;
+
+namespace Base;
 public class MessageProducer<T> 
 {
  

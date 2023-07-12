@@ -1,7 +1,10 @@
 # ReadyCashConsole
 dotnet ef migrations add customerTransactions --project CustomerCore/CustomerCore.csproj -s readycashconsole/readycashconsole.csproj  --context CustomerDbContext  --verbose --context CustomerDbContext
+
 dotnet ef database update --verbose --context CustomerDbContext --project readycashconsole/readycashconsole.csproj
+
 dotnet ef migrations add firstMigration --project LoanCore/LoanCore.csproj -s readycashconsole/readycashconsole.csproj    --verbose --context LoanDbContext
+
 dotnet ef database update --verbose --context LoanDbContext --project readycashconsole/readycashconsole.csproj
 
 

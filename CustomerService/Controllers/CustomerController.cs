@@ -13,11 +13,16 @@ namespace CustomerService.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        CustomerActions customerActions;
+        CustomerActions _customerActions;
+
+        public CustomerController(CustomerActions customerActions)
+        {
+            _customerActions = customerActions;
+        }
         [HttpPost(Name = "CreateCustomer")]
         public void Create(Customer customer)
         {
-            customerActions.Add(customer);
+            _customerActions.Add(customer);
 
         }
     }

@@ -8,8 +8,12 @@ dotnet ef migrations add firstMigration --project LoanCore/LoanCore.csproj -s re
 dotnet ef database update --verbose --context LoanDbContext --project readycashconsole/readycashconsole.csproj
 
 
----kafka
-#bin/zookeeper-server-start.sh config/zookeeper.properties
-#bin/kafka-server-start.sh config/server.properties
-#bin/kafka-topics.sh --list --bootstrap-server localhost:9092
-#bin/kafka-topics.sh --create --topic ready-cash-loan --bootstrap-server localhost:9092
+---kafka commands 
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+bin/kafka-server-start.sh config/server.properties
+
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+bin/kafka-topics.sh --create --topic ready-cash-loan --bootstrap-server localhost:9092

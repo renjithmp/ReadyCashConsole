@@ -2,6 +2,10 @@
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
 
+/// <summary>
+/// Represents a Kafka producer for sending messages.
+/// </summary>
+/// <typeparam name="T">The type of the message to be sent.</typeparam>
 namespace MessagingPublisher
 {
     public class ReadyCashKafkaProducer<T>
@@ -16,6 +20,12 @@ namespace MessagingPublisher
             var producerConfig = new ProducerConfig() { BootstrapServers = "localhost:9092" };
             _producerConfig = producerConfig;
         }
+        /// <summary>
+        /// Sends a message asynchronously.
+        /// </summary>
+        /// <typeparam name="T">The type of the notification message.</typeparam>
+        /// <param name="notificationMessage">The notification message to send.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
         public async Task SendMessage(T notificationMessage)
         {
             try

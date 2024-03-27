@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerService.Controllers
 {
+    /// <summary>
+    /// Represents a controller for managing customer-related operations.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
@@ -19,11 +22,15 @@ namespace CustomerService.Controllers
         {
             _customerActions = customerActions;
         }
+
+        /// <summary>
+        /// Creates a new customer.
+        /// </summary>
+        /// <param name="customer">The customer object to be created.</param>
         [HttpPost(Name = "CreateCustomer")]
         public void Create(Customer customer)
         {
             _customerActions.Add(customer);
-
         }
     }
 }

@@ -6,34 +6,51 @@ using CustomerCore.Model;
 
 namespace MessagingSubscriber.Consumers
 {
-	public class CustomerTransactionsConsumer:ITransactionConsumer
-	{
+    /// <summary>
+    /// Represents a consumer for customer transactions.
+    /// </summary>
+    public class CustomerTransactionsConsumer : ITransactionConsumer
+    {
         CustomerTransactionsTracker _customerTransactionsTracker;
-		public CustomerTransactionsConsumer(CustomerTransactionsTracker customerTransactionsTracker )
-		{
-            _customerTransactionsTracker = customerTransactionsTracker;
-		}
 
-        public void ExecuteActions()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerTransactionsConsumer"/> class.
+        /// </summary>
+        /// <param name="customerTransactionsTracker">The customer transactions tracker.</param>
+        public CustomerTransactionsConsumer(CustomerTransactionsTracker customerTransactionsTracker)
         {
-           // throw new NotImplementedException();
+            _customerTransactionsTracker = customerTransactionsTracker;
         }
 
+        /// <summary>
+        /// Executes the actions for processing customer transactions.
+        /// </summary>
+        public void ExecuteActions()
+        {
+            // throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Reads a Kafka message and processes it as a customer transaction.
+        /// </summary>
+        /// <param name="message">The Kafka message.</param>
         public void ReadKafkaMessage(string message)
         {
-            //There could be many different types of message a Customer Transaction Consumer reads
-            //LoanTransactionMessage is one among them
+            // There could be many different types of messages a Customer Transaction Consumer reads.
+            // LoanTransactionMessage is one among them.
             LoanTransactionMessage customerTransaction = JsonSerializer.Deserialize<LoanTransactionMessage>(message);
-            //ExecuteActions();
-            //todo use automapper 
+            
+            // todo: use automapper
+            
             CustomerTransactions customerTransactions = new CustomerTransactions()
-            { customerId = customerTransaction.customerId,
+            {
+                customerId = customerTransaction.customerId,
                 transactionId = customerTransaction.transactionId,
                 transactionTimestamp = customerTransaction.transactionTimestamp,
-                transactionType = customerTransaction.transactionType };
+                transactionType = customerTransaction.transactionType
+            };
 
             _customerTransactionsTracker.Add(customerTransactions);
-
         }
     }
 }

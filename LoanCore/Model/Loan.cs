@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LoanCore.Model
 {
+    /// <summary>
+    /// Represents a loan entity.
+    /// </summary>
     public class Loan
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -28,7 +31,10 @@ namespace LoanCore.Model
             DateModified = DateTime.Now;
         }
 
-        // Method to calculate the monthly payment based on the loan amount, interest rate, and term in months
+        /// <summary>
+        /// Calculates the monthly payment based on the loan amount, interest rate, and term in months.
+        /// </summary>
+        /// <returns>The calculated monthly payment.</returns>
         private decimal CalculateMonthlyPayment()
         {
             decimal monthlyInterestRate = InterestRate / 1200m;
@@ -36,6 +42,5 @@ namespace LoanCore.Model
             return decimal.Round(monthlyPayment, 2);
         }
     }
-
 }
 

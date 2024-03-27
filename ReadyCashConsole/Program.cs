@@ -1,4 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿/*
+ * This program is a prototype for a core banking system.
+ * It demonstrates the usage of various components such as database connections, dependency injection, and messaging.
+ * The program connects to two databases - customer and loan - using PostgreSQL.
+ * It creates a Kafka producer for publishing customer transactions.
+ * The program performs CRUD operations on the customer database using the CustomerActions class.
+ * It adds a new customer to the database and prints "Hello, World!" to the console.
+ */
+
 using System.Configuration;
 using LoanCore.Model;
 using Microsoft.EntityFrameworkCore;

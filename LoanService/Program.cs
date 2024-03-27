@@ -18,7 +18,7 @@ builder.Services.AddControllers();
 //builder.Services.AddDbContext<CustomerDbContext>(options => options.UseNpgsql(customerDBConnectionstring));
 //builder.Services.AddScoped<CustomerTransactionsTracker>();
 //builder.Services.AddScoped<CustomerTransactions>();
-builder.Services.AddScoped <MessageProducer<LoanTransactionMessage>>();
+builder.Services.AddScoped <NotificationGenerator<LoanTransactionMessage>>();
 builder.Services.AddScoped<LoanAccountService>();
 builder.Services.AddDbContext<LoanDbContext>(options => options.UseNpgsql(loanDBConnectionstring));
 builder.Services.AddScoped<LoanActions>();

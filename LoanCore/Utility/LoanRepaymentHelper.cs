@@ -7,6 +7,14 @@ namespace LoanCore.Utility
     class LoanRepaymentHelper
     {
         public List<LoanRepayment> loans;
+        /// <summary>
+        /// Generates the repayment schedule for a loan.
+        /// </summary>
+        /// <param name="loan">The loan object containing loan details.</param>
+        /// <summary>
+        /// Generates the repayment schedule for a loan.
+        /// </summary>
+        /// <param name="loan">The loan object containing loan details.</param>
         public void GenerateRepaymentSchedule(Loan loan)
         {
             double loanAmount = ((double)loan.Amount); // the loan amount
@@ -37,6 +45,13 @@ namespace LoanCore.Utility
             }
         }
 
+        /// <summary>
+        /// Calculates the monthly payment for a loan.
+        /// </summary>
+        /// <param name="loanAmount">The amount of the loan.</param>
+        /// <param name="monthlyInterestRate">The monthly interest rate.</param>
+        /// <param name="loanTerm">The term of the loan in months.</param>
+        /// <returns>The monthly payment amount.</returns>
         static double CalculateMonthlyPayment(double loanAmount, double monthlyInterestRate, int loanTerm)
         {
             double numerator = loanAmount * monthlyInterestRate * Math.Pow(1 + monthlyInterestRate, loanTerm);

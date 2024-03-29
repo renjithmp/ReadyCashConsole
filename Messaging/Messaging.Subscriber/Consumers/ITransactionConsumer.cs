@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MessagingSubscriber.Consumers
+namespace Messaging.Subscriber.Consumers
 {
 	public interface ITransactionConsumer
 	{

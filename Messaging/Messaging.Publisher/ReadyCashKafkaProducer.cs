@@ -6,7 +6,7 @@ using Confluent.SchemaRegistry.Serdes;
 /// Represents a Kafka producer for sending messages.
 /// </summary>
 /// <typeparam name="T">The type of the message to be sent.</typeparam>
-namespace MessagingPublisher
+namespace Messaging.Publisher
 {
     public class ReadyCashKafkaProducer<T>
     {

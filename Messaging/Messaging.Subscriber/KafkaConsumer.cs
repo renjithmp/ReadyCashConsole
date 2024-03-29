@@ -1,7 +1,7 @@
 ﻿using System;
 using Confluent.Kafka;
 
-namespace MessagingSubscriber
+namespace Messaging.Subscriber
 {
 	public class KafkaConsumer: Microsoft.Extensions.Hosting.BackgroundService
     {

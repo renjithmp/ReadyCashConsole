@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using MessagingPublisher;
 
-namespace Base
+
+namespace Messaging.Publisher
 {
     /// <summary>
     /// Represents a message producer that sends notifications.

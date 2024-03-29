@@ -23,10 +23,10 @@
     <ProjectReference Include="..\LoanCore\Loan.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\KafkaMessage\Messaging.Model.csproj">
+    <ProjectReference Include="..\Messaging\Messaging.Model\Messaging.Model.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\BaseService\Messaging.Publisher.csproj">
+    <ProjectReference Include="..\Messaging\Messaging.Publisher\Messaging.Publisher.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

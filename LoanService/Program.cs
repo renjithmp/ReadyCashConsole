@@ -1,4 +1,4 @@
-﻿using Base;
+﻿using Messaging.Publisher;
 using Confluent.Kafka;
 //using CustomerCore.Actions;
 //using CustomerCore.Model;
@@ -6,7 +6,7 @@ using LoanCore.Actions;
 using LoanCore.Model;
 using LoanService.Domain;
 using Microsoft.EntityFrameworkCore;
-using KafkaMessage.Messages;
+using Messaging.Model.Messages;
 
 var builder = WebApplication.CreateBuilder(args);
 

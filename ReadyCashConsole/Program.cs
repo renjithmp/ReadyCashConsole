@@ -17,7 +17,7 @@ using CustomerCore;
 using CustomerCore.Actions;
 using LoanCore.Actions;
 using CustomerCore.Model;
-using MessagingPublisher;
+using Messaging.Publisher;
 
 string customerDBConnectionstring = "Host=localhost; Database=customer; Username=webuser; Password=SocGen01*";//ConfigurationManager.ConnectionStrings["localPgsqlCustomer"].ConnectionString;
 string loanDBConnectionstring = "Host=localhost; Database=loan; Username=webuser; Password=SocGen01*";//ConfigurationManager.ConnectionStrings["localPgsqlCustomer"].ConnectionString;

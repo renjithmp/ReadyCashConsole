@@ -26,6 +26,7 @@
     <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BaseService\Base.csproj" />
+    <ProjectReference Include="..\Messaging\Messaging.Publisher\Messaging.Publisher.csproj" />
+       <ProjectReference Include="..\Messaging\Messaging.Model\Messaging.Model.csproj"/>
   </ItemGroup>
 </Project>

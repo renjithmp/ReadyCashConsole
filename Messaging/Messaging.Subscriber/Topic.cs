@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MessagingSubscriber
+namespace Messaging.Subscriber
 {
 	public static class Topic
 	{

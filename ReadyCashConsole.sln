@@ -15,11 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service", "Custome
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loan.Service", "LoanService\Loan.Service.csproj", "{E7A16EAC-775C-4595-92CE-935C2E619F2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Publisher", "BaseService\Messaging.Publisher.csproj", "{D498C1A2-560C-4831-AE72-990828FAD0AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Publisher", "Messaging\Messaging.Publisher\Messaging.Publisher.csproj", "{D498C1A2-560C-4831-AE72-990828FAD0AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Model", "KafkaMessage\Messaging.Model.csproj", "{E3A5A312-B020-4700-AAF9-4D609DDA52FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Model", "Messaging\Messaging.Model\Messaging.Model.csproj", "{E3A5A312-B020-4700-AAF9-4D609DDA52FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Subscriber", "Messaging.Subscriber\Messaging.Subscriber.csproj", "{81C1CCB5-E309-4DAE-9560-8BA278CCB3F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Subscriber", "Messaging\Messaging.Subscriber\Messaging.Subscriber.csproj", "{81C1CCB5-E309-4DAE-9560-8BA278CCB3F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

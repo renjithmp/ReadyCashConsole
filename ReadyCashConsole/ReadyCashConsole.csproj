@@ -21,6 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CustomerCore\Customer.Core.csproj" />
     <ProjectReference Include="..\LoanCore\Loan.Core.csproj" />
-    <ProjectReference Include="..\BaseService\Messaging.Publisher.csproj" />
+    <ProjectReference Include="..\Messaging\Messaging.Publisher\Messaging.Publisher.csproj" />
   </ItemGroup>
 </Project>

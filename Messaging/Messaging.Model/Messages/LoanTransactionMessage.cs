@@ -1,5 +1,5 @@
 ﻿using System;
-namespace KafkaMessage.Messages
+namespace Messaging.Model.Messages
 {
     /// <summary>
     /// Represents a loan transaction message.

@@ -1,6 +1,7 @@
 ﻿using CustomerCore.Actions;
 using CustomerCore.Model;
-using MessagingSubscriber;
+using Messaging.Subscriber;
+using Messaging.Subscriber.Consumers;
 using MessagingSubscriber.Consumers;
 using Microsoft.EntityFrameworkCore;
 using Serilog;

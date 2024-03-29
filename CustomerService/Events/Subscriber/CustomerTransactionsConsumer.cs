@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Text.Json;
-using KafkaMessage.Messages;
+using Messaging.Model.Messages;
 using CustomerCore.Actions;
 using CustomerCore.Model;
+using Messaging.Subscriber.Consumers;
 
 namespace MessagingSubscriber.Consumers
 {

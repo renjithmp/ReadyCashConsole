@@ -1,8 +1,8 @@
 ﻿using Confluent.Kafka;
 //using CustomerCore.Actions;
-using MessagingSubscriber.Consumers;
+using Messaging.Subscriber.Consumers;
 
-namespace MessagingSubscriber
+namespace Messaging.Subscriber
 {
     public class ConsumerSettings
     {
